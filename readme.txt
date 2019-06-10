@@ -1,5 +1,5 @@
 Name: Asus X450CC
-macOS version: 10.14.5
+macOS version: 10.11.x, 10.12.x, 10.13.x, 10.14.5
 Clover version: 4934
 
 Spec:
