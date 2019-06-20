@@ -668,7 +668,7 @@
 					<key>Comment</key>
 					<string>Rename IDE0 to SATA</string>
 					<key>Disabled</key>
-					<false/>
+					<true/>
 					<key>Find</key>
 					<data>
 					SURFMA==
@@ -763,9 +763,11 @@
 	<key>Boot</key>
 	<dict>
 		<key>Arguments</key>
-		<string>kext-dev-mode=1 -xcpm -cdfon -igfxnohdmi dart=0</string>
+		<string>kext-dev-mode=1 -cdfon -igfxnohdmi dart=0</string>
+		<key>DefaultLoader</key>
+		<string>\EFI\Microsoft\Boot\bootmgfw.efi</string>
 		<key>DefaultVolume</key>
-		<string>00011EC9-0EA0-AE8B-7ADF-F531923D0200</string>
+		<string>E540D54A-664B-43EB-85B6-04960D1C4C07</string>
 		<key>Log</key>
 		<false/>
 		<key>NeverHibernate</key>
@@ -917,12 +919,6 @@
 		<dict>
 			<key>PciRoot(0)/Pci(0x02,0)</key>
 			<dict>
-				<key>#AAPL,slot-name</key>
-				<string>Built in</string>
-				<key>#device_typ﻿e</key>
-				<string>Video Adapter</string>
-				<key>#model</key>
-				<string>Intel HD Graphics 4000 </string>
 				<key>AAPL,ig-platform-id</key>
 				<data>
 				AwBmAQ==
@@ -957,8 +953,16 @@
 				<data>
 				EgAAAA==
 				</data>
+				<key>framebuffer-fbmem</key>
+				<data>
+				AACQAA==
+				</data>
 				<key>framebuffer-patch-enable</key>
 				<integer>1</integer>
+				<key>framebuffer-stolenmem</key>
+				<data>
+				AAAwAQ==
+				</data>
 				<key>hda-gfx</key>
 				<string>onboard-1</string>
 			</dict>
@@ -991,7 +995,7 @@
 					<key>Disabled</key>
 					<false/>
 					<key>FullTitle</key>
-					<string>EL Capitan OSX</string>
+					<string>Macintosh</string>
 					<key>Hidden</key>
 					<false/>
 					<key>Ignore</key>
@@ -999,13 +1003,13 @@
 					<key>Image</key>
 					<string>cap</string>
 					<key>InjectKexts</key>
-					<true/>
+					<string>Detect</string>
 					<key>NoCaches</key>
 					<false/>
 					<key>Type</key>
 					<string>OSX</string>
 					<key>Volume</key>
-					<string>00011EC9-0EA0-AE8B-7ADF-F531923D0200</string>
+					<string>00000069-AF90-5D83-C4DE-DF33D2000000</string>
 					<key>VolumeType</key>
 					<string>Internal</string>
 				</dict>
@@ -1023,25 +1027,7 @@
 					<key>Type</key>
 					<string>Windows</string>
 					<key>Volume</key>
-					<string>E0ED3A16-482C-4785-9452-9AA2A6DB91F0</string>
-					<key>VolumeType</key>
-					<string>Internal</string>
-				</dict>
-				<dict>
-					<key>Disabled</key>
-					<false/>
-					<key>FullTitle</key>
-					<string>Parrot OS</string>
-					<key>Ignore</key>
-					<false/>
-					<key>Image</key>
-					<string>arch</string>
-					<key>Path</key>
-					<string>\EFI\parrot\grubx64.efi</string>
-					<key>Type</key>
-					<string>Linux</string>
-					<key>Volume</key>
-					<string>E0ED3A16-482C-4785-9452-9AA2A6DB91F0</string>
+					<string>E540D54A-664B-43EB-85B6-04960D1C4C07</string>
 					<key>VolumeType</key>
 					<string>Internal</string>
 				</dict>
@@ -1050,7 +1036,7 @@
 		<key>Hide</key>
 		<array>
 			<string>bootx64.efi</string>
-			<string>Recovery HD</string>
+			<string>Recovery</string>
 			<string>Preboot</string>
 		</array>
 		<key>Language</key>
@@ -1065,6 +1051,8 @@
 			<key>Entries</key>
 			<true/>
 			<key>Legacy</key>
+			<false/>
+			<key>Linux</key>
 			<false/>
 			<key>Tool</key>
 			<true/>
@@ -1105,7 +1093,7 @@
 				<key>Comment</key>
 				<string>Boot graphics glitch, 10.10.x/10.11.x (credit lisai9093, cecekpawon)</string>
 				<key>Disabled</key>
-				<false/>
+				<true/>
 				<key>Find</key>
 				<data>
 				AQAAdRc=
@@ -1191,6 +1179,26 @@
 				cALsEA==
 				</data>
 			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>Boot graphics glitch, 10.12.dp1 (credit denskop)</string>
+				<key>Disabled</key>
+				<true/>
+				<key>Find</key>
+				<data>
+				EAAHUlA=
+				</data>
+				<key>InfoPlistPatch</key>
+				<false/>
+				<key>MatchOS</key>
+				<string>10.12.x</string>
+				<key>Name</key>
+				<string>com.apple.iokit.IOGraphicsFamily</string>
+				<key>Replace</key>
+				<data>
+				AQAA6yU=
+				</data>
+			</dict>
 		</array>
 	</dict>
 	<key>RtVariables</key>
@@ -1200,72 +1208,30 @@
 		<key>CsrActiveConfig</key>
 		<string>0x67</string>
 		<key>MLB</key>
-		<string>C02324303CDF1YJ1H</string>
+		<string>C02243310J9F5051H</string>
 		<key>ROM</key>
 		<data>
-		HHs/YlL/
+		XCYKZ0n8
 		</data>
 	</dict>
 	<key>SMBIOS</key>
 	<dict>
-		<key>BiosReleaseDate</key>
-		<string>09/21/2018</string>
-		<key>BiosVendor</key>
-		<string>Apple Inc.</string>
-		<key>BiosVersion</key>
-		<string>MBP91.88Z.F000.B00.1809210851</string>
-		<key>Board-ID</key>
-		<string>Mac-6F01561E16C75D06</string>
-		<key>BoardManufacturer</key>
-		<string>Apple Inc.</string>
-		<key>BoardSerialNumber</key>
-		<string>C02324303CDF1YJ1H</string>
-		<key>BoardType</key>
-		<integer>10</integer>
-		<key>BoardVersion</key>
-		<string>1.0</string>
-		<key>ChassisAssetTag</key>
-		<string>MacBook-Aluminum</string>
-		<key>ChassisManufacturer</key>
-		<string>Apple Inc.</string>
-		<key>ChassisType</key>
-		<string>0x0A</string>
-		<key>EfiVersion</key>
-		<string>222.0.0.0.0</string>
-		<key>Family</key>
-		<string>MacBook Pro</string>
-		<key>FirmwareFeatures</key>
-		<string>0xC00DE137</string>
-		<key>FirmwareFeaturesMask</key>
-		<string>0xFF1FFF3F</string>
-		<key>LocationInChassis</key>
-		<string>Part Component</string>
-		<key>Manufacturer</key>
-		<string>Apple Inc.</string>
 		<key>Memory</key>
 		<dict>
 			<key>Channels</key>
 			<integer>2</integer>
 		</dict>
 		<key>Mobile</key>
-		<true/>
-		<key>PlatformFeature</key>
-		<string>0xFFFF</string>
+		<false/>
 		<key>ProductName</key>
 		<string>MacBookPro9,2</string>
-		<key>SerialNumber</key>
-		<string>C02KVGYZDTY3</string>
-		<key>SmUUID</key>
-		<string>76CB1D51-69F9-49B7-AA01-FE78696252FF</string>
 		<key>Trust</key>
 		<true/>
-		<key>Version</key>
-		<string>1.0</string>
 	</dict>
 	<key>SystemParameters</key>
 	<dict>
 		<key>CustomUUID</key>
-		<string>1C1455EA-A93D-4C24-BE68-63484AD2C17A</string>
+		<string>6A57C53C-7D9B-4082-B89A-718B919566A4</string>
 		<key>InjectKexts</key>
 		<string>Yes</string>
 		<key>InjectSystemID</key>
