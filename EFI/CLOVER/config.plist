@@ -486,6 +486,10 @@
 				<key>TableId</key>
 				<string>AhciTab2</string>
 			</dict>
+			<dict>
+				<key>Signature</key>
+				<string>ECDT</string>
+			</dict>
 		</array>
 		<key>SSDT</key>
 		<dict>
@@ -837,7 +841,9 @@
 		<key>MLB</key>
 		<string>C02410301J9F1YJ1F</string>
 		<key>ROM</key>
-		<string>UseMacAddr0</string>
+		<data>
+		Z2+pY52Q
+		</data>
 	</dict>
 	<key>SMBIOS</key>
 	<dict>
