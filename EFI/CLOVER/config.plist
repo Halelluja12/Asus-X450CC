@@ -220,7 +220,7 @@
 				</dict>
 				<dict>
 					<key>Comment</key>
-					<string>_Q0E(0,N) to ZQ0E(0,N)</string>
+					<string>(ATK) rename Method _Q0E(0,N) to ZQ0E(0,N)</string>
 					<key>Disabled</key>
 					<false/>
 					<key>Find</key>
@@ -234,7 +234,7 @@
 				</dict>
 				<dict>
 					<key>Comment</key>
-					<string>_Q0F(0,N) to ZQ0F(0,N)</string>
+					<string>(ATK) rename Method _Q0F(0,N) to ZQ0F(0,N)</string>
 					<key>Disabled</key>
 					<false/>
 					<key>Find</key>
@@ -432,44 +432,86 @@
 				</dict>
 				<dict>
 					<key>Comment</key>
-					<string>change Method (_UPC,0,S) to XUPC HSP1, SSP1</string>
+					<string>change EC0 to EC</string>
 					<key>Disabled</key>
-					<true/>
+					<false/>
 					<key>Find</key>
 					<data>
-					FD9fVVBD
+					RUMwXw==
 					</data>
 					<key>Replace</key>
 					<data>
-					FD9YVVBD
+					RUNfXw==
 					</data>
 				</dict>
 				<dict>
 					<key>Comment</key>
-					<string>change Method (_UPC,0,S) to XUPC HSP2, SSP2</string>
+					<string>Change XHC1 to XHCI</string>
 					<key>Disabled</key>
-					<true/>
+					<false/>
 					<key>Find</key>
 					<data>
-					FEEEX1VQQw==
+					WEhDMQ==
 					</data>
 					<key>Replace</key>
 					<data>
-					FEEEWFVQQw==
+					WEhDSQ==
 					</data>
 				</dict>
 				<dict>
 					<key>Comment</key>
-					<string>change Method (_UPC,0,S) to XUPC HSP3, HSP4, SSP3, SSP4</string>
+					<string>(ATK) rename Method(_Q0A,0,NS) to XQ0A</string>
 					<key>Disabled</key>
-					<true/>
+					<false/>
 					<key>Find</key>
 					<data>
-					FEIEX1VQQw==
+					X1EwQQA=
 					</data>
 					<key>Replace</key>
 					<data>
-					FEIEWFVQQw==
+					WFEwQQA=
+					</data>
+				</dict>
+				<dict>
+					<key>Comment</key>
+					<string>(ATK) rename Method(_Q0B,0,NS) to XQ0B</string>
+					<key>Disabled</key>
+					<false/>
+					<key>Find</key>
+					<data>
+					X1EwQgA=
+					</data>
+					<key>Replace</key>
+					<data>
+					WFEwQgA=
+					</data>
+				</dict>
+				<dict>
+					<key>Comment</key>
+					<string>(ATK) rename Method(_Q11,0,NS) to XQ11</string>
+					<key>Disabled</key>
+					<false/>
+					<key>Find</key>
+					<data>
+					X1ExMQg=
+					</data>
+					<key>Replace</key>
+					<data>
+					WFExMQg=
+					</data>
+				</dict>
+				<dict>
+					<key>Comment</key>
+					<string>change IDE0 to SATA</string>
+					<key>Disabled</key>
+					<false/>
+					<key>Find</key>
+					<data>
+					SURFMA==
+					</data>
+					<key>Replace</key>
+					<data>
+					U0FUQQ==
 					</data>
 				</dict>
 			</array>
@@ -486,10 +528,6 @@
 				<key>TableId</key>
 				<string>AhciTab2</string>
 			</dict>
-			<dict>
-				<key>Signature</key>
-				<string>ECDT</string>
-			</dict>
 		</array>
 		<key>SSDT</key>
 		<dict>
@@ -504,14 +542,16 @@
 				<key>PluginType</key>
 				<true/>
 			</dict>
+			<key>NoOemTableId</key>
+			<true/>
 		</dict>
 	</dict>
 	<key>Boot</key>
 	<dict>
 		<key>Arguments</key>
-		<string>kext-dev-mode=1 -cdfon -igfxnohdmi -xcpm -v</string>
+		<string>kext-dev-mode=1 -cdfon -igfxnohdmi -xcpm</string>
 		<key>DefaultVolume</key>
-		<string>7EFEDA30-3317-01D5-180D-3EBE8B99EA00</string>
+		<string>Macintosh</string>
 		<key>Log</key>
 		<false/>
 		<key>NeverHibernate</key>
@@ -653,7 +693,7 @@
 		<key>Audio</key>
 		<dict>
 			<key>Inject</key>
-			<integer>2</integer>
+			<integer>28</integer>
 		</dict>
 		<key>HDMIInjection</key>
 		<false/>
@@ -711,7 +751,7 @@
 				<key>hda-gfx</key>
 				<string>onboard-1</string>
 				<key>layout-id</key>
-				<integer>2</integer>
+				<integer>28</integer>
 			</dict>
 		</dict>
 		<key>USB</key>
@@ -754,7 +794,7 @@
 					<key>Type</key>
 					<string>OSX</string>
 					<key>Volume</key>
-					<string>7EFEDA30-3317-01D5-180D-3EBE8B99EA00</string>
+					<string>737FF6A0-6301-01D5-50FB-9EB180B1EA00</string>
 					<key>VolumeType</key>
 					<string>Internal</string>
 				</dict>
@@ -772,7 +812,7 @@
 					<key>Type</key>
 					<string>Windows</string>
 					<key>Volume</key>
-					<string>E540D54A-664B-43EB-85B6-04960D1C4C07</string>
+					<string>82A55B2E-2A46-4D4B-8314-09777372F1CB</string>
 					<key>VolumeType</key>
 					<string>Internal</string>
 				</dict>
