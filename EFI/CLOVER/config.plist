@@ -47,6 +47,8 @@
 				<string>ApIst</string>
 			</dict>
 		</array>
+		<key>AutoMerge</key>
+		<true/>
 		<key>DSDT</key>
 		<dict>
 			<key>Fixes</key>
@@ -64,6 +66,20 @@
 			</dict>
 			<key>Patches</key>
 			<array>
+				<dict>
+					<key>Comment</key>
+					<string>Change XHC1 to XHCI</string>
+					<key>Disabled</key>
+					<false/>
+					<key>Find</key>
+					<data>
+					WEhDMQ==
+					</data>
+					<key>Replace</key>
+					<data>
+					WEhDSQ==
+					</data>
+				</dict>
 				<dict>
 					<key>Comment</key>
 					<string>change EHC1 to EH01</string>
@@ -248,7 +264,7 @@
 				</dict>
 				<dict>
 					<key>Comment</key>
-					<string>TACH(1,S) to TACZ(1,S)</string>
+					<string>(Battery rename) TACH(1,S) to TACZ(1,S)</string>
 					<key>Disabled</key>
 					<false/>
 					<key>Find</key>
@@ -262,7 +278,7 @@
 				</dict>
 				<dict>
 					<key>Comment</key>
-					<string>BIFA(0,N) to BIFZ(0,N)</string>
+					<string>(Battery rename) BIFA(0,N) to BIFZ(0,N)</string>
 					<key>Disabled</key>
 					<false/>
 					<key>Find</key>
@@ -276,7 +292,7 @@
 				</dict>
 				<dict>
 					<key>Comment</key>
-					<string>SMBR(3,S) to SMRZ(3,S)</string>
+					<string>(Battery rename) SMBR(3,S) to SMRZ(3,S)</string>
 					<key>Disabled</key>
 					<false/>
 					<key>Find</key>
@@ -290,7 +306,7 @@
 				</dict>
 				<dict>
 					<key>Comment</key>
-					<string>SMBW(5,S) to SMWZ(5,S)</string>
+					<string>(Battery rename) SMBW(5,S) to SMWZ(5,S)</string>
 					<key>Disabled</key>
 					<false/>
 					<key>Find</key>
@@ -304,7 +320,7 @@
 				</dict>
 				<dict>
 					<key>Comment</key>
-					<string>ECSB(7,N) to ECSZ(7,N)</string>
+					<string>(Battery rename) ECSB(7,N) to ECSZ(7,N)</string>
 					<key>Disabled</key>
 					<false/>
 					<key>Find</key>
@@ -318,7 +334,7 @@
 				</dict>
 				<dict>
 					<key>Comment</key>
-					<string>_BIX(0,N) to ZBIX(0,N)</string>
+					<string>(Battery rename) _BIX(0,N) to ZBIX(0,N)</string>
 					<key>Disabled</key>
 					<false/>
 					<key>Find</key>
@@ -446,20 +462,6 @@
 				</dict>
 				<dict>
 					<key>Comment</key>
-					<string>Change XHC1 to XHCI</string>
-					<key>Disabled</key>
-					<false/>
-					<key>Find</key>
-					<data>
-					WEhDMQ==
-					</data>
-					<key>Replace</key>
-					<data>
-					WEhDSQ==
-					</data>
-				</dict>
-				<dict>
-					<key>Comment</key>
 					<string>(ATK) rename Method(_Q0A,0,NS) to XQ0A</string>
 					<key>Disabled</key>
 					<false/>
@@ -522,13 +524,9 @@
 				<key>Signature</key>
 				<string>DMAR</string>
 			</dict>
-			<dict>
-				<key>Signature</key>
-				<string>SSDT</string>
-				<key>TableId</key>
-				<string>AhciTab2</string>
-			</dict>
 		</array>
+		<key>FixHeaders</key>
+		<true/>
 		<key>SSDT</key>
 		<dict>
 			<key>DropOem</key>
@@ -565,131 +563,6 @@
 	</dict>
 	<key>Devices</key>
 	<dict>
-		<key>Arbitrary</key>
-		<array>
-			<dict>
-				<key>Comment</key>
-				<string>Intel EHCI #1</string>
-				<key>CustomProperties</key>
-				<array>
-					<dict>
-						<key>Disabled</key>
-						<false/>
-						<key>Key</key>
-						<string>AAPL,current-available</string>
-						<key>Value</key>
-						<integer>2100</integer>
-					</dict>
-					<dict>
-						<key>Disabled</key>
-						<false/>
-						<key>Key</key>
-						<string>AAPL,current-extra</string>
-						<key>Value</key>
-						<integer>2200</integer>
-					</dict>
-					<dict>
-						<key>Disabled</key>
-						<false/>
-						<key>Key</key>
-						<string>AAPL,current-extra-in-sleep</string>
-						<key>Value</key>
-						<integer>1600</integer>
-					</dict>
-					<dict>
-						<key>Disabled</key>
-						<false/>
-						<key>Key</key>
-						<string>AAPL,max-port-current-in-sleep</string>
-						<key>Value</key>
-						<integer>2100</integer>
-					</dict>
-					<dict>
-						<key>Disabled</key>
-						<false/>
-						<key>Key</key>
-						<string>subsystem-id</string>
-						<key>Value</key>
-						<data>
-						cHIAAA==
-						</data>
-					</dict>
-					<dict>
-						<key>Disabled</key>
-						<false/>
-						<key>Key</key>
-						<string>subsystem-vendor-id</string>
-						<key>Value</key>
-						<data>
-						hoAAAA==
-						</data>
-					</dict>
-				</array>
-				<key>PciAddr</key>
-				<string>00:1D.00</string>
-			</dict>
-			<dict>
-				<key>Comment</key>
-				<string>Intel EHCI #2</string>
-				<key>CustomProperties</key>
-				<array>
-					<dict>
-						<key>Disabled</key>
-						<false/>
-						<key>Key</key>
-						<string>AAPL,current-available</string>
-						<key>Value</key>
-						<integer>2100</integer>
-					</dict>
-					<dict>
-						<key>Disabled</key>
-						<false/>
-						<key>Key</key>
-						<string>AAPL,current-extra</string>
-						<key>Value</key>
-						<integer>2200</integer>
-					</dict>
-					<dict>
-						<key>Disabled</key>
-						<false/>
-						<key>Key</key>
-						<string>AAPL,current-extra-in-sleep</string>
-						<key>Value</key>
-						<integer>1600</integer>
-					</dict>
-					<dict>
-						<key>Disabled</key>
-						<false/>
-						<key>Key</key>
-						<string>AAPL,max-port-current-in-sleep</string>
-						<key>Value</key>
-						<integer>2100</integer>
-					</dict>
-					<dict>
-						<key>Disabled</key>
-						<false/>
-						<key>Key</key>
-						<string>subsystem-id</string>
-						<key>Value</key>
-						<data>
-						cHIAAA==
-						</data>
-					</dict>
-					<dict>
-						<key>Disabled</key>
-						<false/>
-						<key>Key</key>
-						<string>subsystem-vendor-id</string>
-						<key>Value</key>
-						<data>
-						hoAAAA==
-						</data>
-					</dict>
-				</array>
-				<key>PciAddr</key>
-				<string>00:1A.00</string>
-			</dict>
-		</array>
 		<key>Audio</key>
 		<dict>
 			<key>Inject</key>
@@ -698,6 +571,8 @@
 		<key>HDMIInjection</key>
 		<false/>
 		<key>Inject</key>
+		<false/>
+		<key>LANInjection</key>
 		<false/>
 		<key>NoDefaultProperties</key>
 		<false/>
@@ -739,19 +614,77 @@
 				<data>
 				AAAwAQ==
 				</data>
-				<key>framebuffer-unifiedmem</key>
-				<data>
-				AAAAgA==
-				</data>
 				<key>hda-gfx</key>
 				<string>onboard-1</string>
 			</dict>
+			<key>PciRoot(0x0)/Pci(0x14,0x0)</key>
+			<dict>
+				<key>AAPL,slot-name</key>
+				<string>Internal@0,20,0</string>
+				<key>device_type</key>
+				<string>USB controller</string>
+				<key>model</key>
+				<string>7 Series/C210 Series Chipset Family USB xHCI Host Controller</string>
+			</dict>
+			<key>PciRoot(0x0)/Pci(0x1a,0x0)</key>
+			<dict>
+				<key>AAPL,slot-name</key>
+				<string>Internal@0,26,0</string>
+				<key>device_type</key>
+				<string>USB controller</string>
+				<key>model</key>
+				<string>7 Series/C216 Chipset Family USB Enhanced Host Controller #2</string>
+			</dict>
 			<key>PciRoot(0x0)/Pci(0x1b,0x0)</key>
 			<dict>
+				<key>AAPL,slot-name</key>
+				<string>Internal@0,27,0</string>
+				<key>device_type</key>
+				<string>Audio device</string>
 				<key>hda-gfx</key>
 				<string>onboard-1</string>
 				<key>layout-id</key>
 				<integer>28</integer>
+				<key>model</key>
+				<string>7 Series/C216 Chipset Family High Definition Audio Controller</string>
+			</dict>
+			<key>PciRoot(0x0)/Pci(0x1c,0x1)/Pci(0x0,0x0)</key>
+			<dict>
+				<key>AAPL,slot-name</key>
+				<string>Internal@0,28,1/0,0</string>
+				<key>device_type</key>
+				<string>Network controller</string>
+				<key>model</key>
+				<string>BCM43224 802.11a/b/g/n</string>
+			</dict>
+			<key>PciRoot(0x0)/Pci(0x1c,0x3)/Pci(0x0,0x2)</key>
+			<dict>
+				<key>AAPL,slot-name</key>
+				<string>Internal@0,28,3/0,2</string>
+				<key>built-in</key>
+				<string>en0</string>
+				<key>device_type</key>
+				<string>Ethernet controller</string>
+				<key>model</key>
+				<string>RTL8111/8168/8411 PCI Express Gigabit Ethernet Controller</string>
+			</dict>
+			<key>PciRoot(0x0)/Pci(0x1d,0x0)</key>
+			<dict>
+				<key>AAPL,slot-name</key>
+				<string>Internal@0,29,0</string>
+				<key>device_type</key>
+				<string>USB controller</string>
+				<key>model</key>
+				<string>7 Series/C216 Chipset Family USB Enhanced Host Controller #1</string>
+			</dict>
+			<key>PciRoot(0x0)/Pci(0x1f,0x2)</key>
+			<dict>
+				<key>AAPL,slot-name</key>
+				<string>Internal@0,31,2</string>
+				<key>device_type</key>
+				<string>SATA controller</string>
+				<key>model</key>
+				<string>7 Series Chipset Family 6-port SATA Controller [AHCI mode]</string>
 			</dict>
 		</dict>
 		<key>USB</key>
@@ -764,7 +697,7 @@
 			<false/>
 		</dict>
 		<key>UseIntelHDMI</key>
-		<true/>
+		<false/>
 	</dict>
 	<key>GUI</key>
 	<dict>
@@ -775,8 +708,6 @@
 			<key>Entries</key>
 			<array>
 				<dict>
-					<key>AddArguments</key>
-					<string>nv_disable=1</string>
 					<key>Disabled</key>
 					<false/>
 					<key>FullTitle</key>
@@ -879,10 +810,10 @@
 		<key>CsrActiveConfig</key>
 		<string>0x67</string>
 		<key>MLB</key>
-		<string>C02410301J9F1YJ1F</string>
+		<string>C02223108GUF1YJUE</string>
 		<key>ROM</key>
 		<data>
-		Z2+pY52Q
+		vO57tMWN
 		</data>
 	</dict>
 	<key>SMBIOS</key>
@@ -898,7 +829,7 @@
 		<key>BoardManufacturer</key>
 		<string>Apple Inc.</string>
 		<key>BoardSerialNumber</key>
-		<string>C02410301J9F1YJ1F</string>
+		<string>C02223108GUF1YJUE</string>
 		<key>BoardType</key>
 		<integer>10</integer>
 		<key>BoardVersion</key>
@@ -928,18 +859,16 @@
 		<key>ProductName</key>
 		<string>MacBookPro9,2</string>
 		<key>SerialNumber</key>
-		<string>C02MDVZ7DTY3</string>
+		<string>C02HT05ZDTY3</string>
 		<key>SmUUID</key>
-		<string>F1DB9730-C06F-4B0A-89D3-9B77A9639D90</string>
+		<string>97E7954E-293E-4C07-B144-11E0F24DE813</string>
 		<key>Version</key>
 		<string>1.0</string>
 	</dict>
 	<key>SystemParameters</key>
 	<dict>
-		<key>CustomUUID</key>
-		<string>F1DB9730-C06F-4B0A-89D3-9B77A9639D90</string>
 		<key>InjectKexts</key>
-		<string>Yes</string>
+		<string>Detect</string>
 		<key>InjectSystemID</key>
 		<true/>
 	</dict>
