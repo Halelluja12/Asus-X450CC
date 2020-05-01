@@ -1,6 +1,6 @@
 Name: Asus X450CC
-macOS version: 10.11.x, 10.12.x, 10.13.x, 10.14.5, 10.15
-Clover version: 5050
+macOS version: 10.11.x, 10.12.x, 10.13.x, 10.14.5, 10.15.x
+Clover version: 5114
 
 Spec:
 + CPU: i3-3217U
