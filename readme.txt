@@ -20,3 +20,9 @@ Spec:
 	- Wifi: Broadcom bcm43224 Wireless (Replace)
 + Card reader: Realtek RTL8411 PCI-E Card Reader not work
 + Trackpad: OK, with Elan tochpad Preference
+
+Opencore Bootloader 0.5.8 Realese
+
++ update new hotpatch style compatible with OC
++ native nvram, GUI boot
++ Please add -v bootflag on the config.plist to debug some errors
