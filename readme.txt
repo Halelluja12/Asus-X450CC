@@ -21,7 +21,7 @@ Spec:
 + Card reader: Realtek RTL8411 PCI-E Card Reader not work
 + Trackpad: OK, with Elan tochpad Preference
 
-Opencore Bootloader 0.5.8 Release
+Opencore Bootloader 0.6.0 Release
 
 + update new hotpatch style compatible with OC
 + native nvram, GUI boot
