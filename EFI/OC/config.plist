@@ -1516,6 +1516,7 @@
 				<false/>
 				<key>Name</key>
 				<string>Clover Bootloader</string>
+				<key>Path</key>
 				<string>PciRoot(0x0)/Pci(0x1F,0x2)/Sata(0x0,0xFFFF,0x0)/HD(1,GPT,AE4D6B57-1984-423C-905A-D4E81EDC5BFF,0x800,0x72000)/\EFI\CLOVER\CLOVERX64.efi</string>
 			</dict>
 		</array>
@@ -1775,6 +1776,8 @@
 			<true/>
 			<key>RequestBootVarRouting</key>
 			<true/>
+			<key>TscSyncTimeout</key>
+			<integer>0</integer>
 			<key>UnblockFsConnect</key>
 			<false/>
 		</dict>
